@@ -4,98 +4,172 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Form</title>
+    <title>My First Form "updated"</title>
     <style>
-    div {
-    text-align: center;
-    }
-    .form {
+html 
+{
+    height: 100%;
+}
+body 
+{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    background: linear-gradient( 0deg, #141e30, #243b55);
+}
+.box 
+{
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 300px;
-    padding: 40px;
     transform: translate(-50%, -50%);
-    border: solid;
-    border-radius: 15px;
-    padding-bottom: 15px;
-    box-shadow: 0 4px 8px 0;
-    }
-    input {
-        width: 70%;
-        padding: 5px;
-        margin: 5px;
-        border-radius: 5px;
-        background-color: lightgoldenrodyellow;
-        font-family: 'Courier New', Courier, monospace;
-    }
-    .button{
-        width: 20%;
-        padding: 5px;
-        margin: 5px;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px 0;
-        background-color: lightgoldenrodyellow;
-        font-family: 'Courier New', Courier, monospace;
-        margin-bottom: 20px;
-    }
-    .button:hover {
-        background-color: rgba(177, 177, 92, 0.712);
-    }
+    width: 400px;
+    background: rgba(0,0,0,.5);
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,.1);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+.box h1
+{
+    margin: 0 0 5px;
+    padding: 0;
+    color: #03e9f4;
+    text-transform: uppercase;
+}
+p
+{
+    color: #fff;
+    margin: 0 0 40px;
+}  
+.box input
+{
+    padding: 10px 0;
+    margin-bottom: 30px;
+}
+label
 
-    .button:active {
-        background-color: rgba(177, 177, 92, 0.712);
-        box-shadow: 0 5px lightgoldenrodyellow;
-        transform: translateY(4px);
-    }
+select 
+{
+    appearance: none;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 5px ;
+    margin-bottom: 30px;
+    cursor: pointer;
+    line-height: inherit;
+}
+.box input,
+select 
+{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 30px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.box input[type="submit"]
+{
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    border-bottom: none;
+    background: #03e9f4;
+    color: #fff;
+    text-transform: uppercase;
+}
+.box form div
+{
+    position: relative;
+}
+.box form div label
+{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #fff;
+    transition: .5s;
+    pointer-events: none;
+}
+.box input:focus ~ label,
+.box input:valid ~ label
 
-    .login-box .user-box input:focus ~ label,
-    .login-box .user-box input:valid ~ label {
-    top: -20px;
+{
+    top: -12px;
     left: 0;
     color: #03e9f4;
     font-size: 12px;
+    font-weight: bold;
+}
+.box .button 
+{
+
+    border-radius: 5px;
+    width: 40%;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .5s;
+    margin-top: 15px;
+    letter-spacing: 4px
+}
+.box .button:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4;
+}
+.box .button:active {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4;
 }
 
-
-    .sex {
-        width: 5%;
-        padding: 5px;
-        margin: 5px; 
-        justify-content: left;
-    }
-    p {
-        padding-right: 10%;
-        padding-left: 10%;
-    }
-
-        body {
-            background-color: lightgoldenrodyellow;
-            font-family: 'Courier New', Courier, monospace;
-            margin:0;
-            padding:0;
-        }
-    </style>
+</style>
 </head>
 <body>
-    <div class="form">
-        <h1>Welcome</h1>
-        <p>Enter your details to get started</p>
+    <div class="box">
+            <h1>Welcome</h1>
+            <p>Enter your details to get started</p>
         <form onsubmit="alert('Registration Successful')">
-        <input type="text" id="name" name="name" placeholder="Name" required>
-        <br>
-        <input type="email" id="email" name="email" placeholder="Email address" required>
-        <br>
-        <input type="tel" name="number" placeholder="Phone number" required>
-        <br>
-        <label for="male">Male</label>
-        <input type="radio" name="sex" id="male" value="male" class="sex">
-        <label for="male">Female</label>
-        <input type="radio" name="sex" id="female" value="female" class="sex">
-        <br>
-        <input type="password" placeholder="Password" required>
-        <br>
-        <input type="submit" class="button" value="Submit">
+        <div>
+            <input type="text" id="name" name="name" required>
+            <label for="name">Name</label>
+        </div>
+        <div>
+            <input type="email" id="email" name="email" required>
+            <label for="email">Email</label>
+        </div>
+        <div>
+            <input type="tel" id="number" name="number"required>
+            <label for="number">Phone number</label>
+        </div>
+        <div>
+            <select name="gender" id="gender">
+            <option value="">-Select Gender-</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            </select>
+        </div>
+        <div>
+            <input type="password" id="password" name="password" required>
+            <label for="password">Password</label>
+        </div>
+        <div>
+            <input type="submit" class="button" value="Submit">
+        </div>
+            </div>
         </form>
     </div>
 </body>
